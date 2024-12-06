@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="logo vector.svg">
+    <title>Admin Dashboard - Board Question Bank</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .toast-container {
+            z-index: 1050;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Board Question Bank</a>
+            <div class="d-flex">
+                <span class="navbar-text text-white me-3">Admin Dashboard</span>
+                <button class="btn btn-outline-light btn-sm" id="logoutBtn">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <!-- Tab Navigation -->
+        <ul class="nav nav-tabs mb-4">
+            <li class="nav-item">
+                <a class="nav-link active" data-bs-toggle="tab" href="#uploadQuestion">Upload Questions</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#manageSubjects">Manage Subjects</a>
+            </li>
+        </ul>
+
+        <div class="row">
+            <!-- Tab Content -->
+            <div class="tab-content">
+                <!-- Upload Questions Tab -->
+                <div class="tab-pane fade show active" id="uploadQuestion">
+                    <!-- Upload Form -->
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Upload Question Paper</h5>
+                            </div>
+                            <div class="card-body">
+                                <form id="uploadForm">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Class</label>
+                                            <select class="form-select" id="class" required>
+                                                <option value="HSC">HSC</option>
+                                                <option value="SSC">SSC</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Subject</label>
+                                            <select class="form-select" id="subject" required>
+                                                <option value="">Select Subject</option>
+                                                <!-- Will be populated by JavaScript -->
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Paper</label>
+                                            <select class="form-select" id="paper">
+                                                <option value="">Single Paper</option>
+                                                <option value="1st">1st Paper</option>
+                                                <option value="2nd">2nd Paper</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Year</label>
+                                            <select class="form-select" id="year" required>
+                                                <option value="2024">2024</option>
+                                                <option value="2023">2023</option>
+                                                <option value="2022">2022</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2018">2018</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Board</label>
+                                            <select class="form-select" id="board" required>
+                                                <option value="dhaka">Dhaka</option>
+                                                <option value="barisal">Barisal</option>
+                                                <option value="chattogram">Chattogram</option>
+                                                <option value="cumilla">Cumilla</option>
+                                                <option value="dinajpur">Dinajpur</option>
+                                                <option value="jashore">Jashore</option>
+                                                <option value="mymensingh">Mymensingh</option>
+                                                <option value="rajshahi">Rajshahi</option>
+                                                <option value="sylhet">Sylhet</option>
+                                                <option value="madrasah">Madrasah</option>
+                                                <option value="technical">Technical</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Question Images</label>
+                                            <input type="file" class="form-control" id="questionImages" 
+                                                   accept="image/*" multiple required>
+                                            <small class="text-muted">Select all images for this question (max 6)</small>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Upload Question</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Uploads -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Recent Uploads</h5>
+                            </div>
+                            <div class="card-body">
+                                <div id="recentUploads">
+                                    <!-- Will be populated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manage Subjects Tab -->
+                <div class="tab-pane fade" id="manageSubjects">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Add New Subject</h5>
+                            </div>
+                            <div class="card-body">
+                                <form id="subjectForm">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Subject Name</label>
+                                            <input type="text" class="form-control" id="subjectName" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Class</label>
+                                            <select class="form-select" id="subjectClass" required>
+                                                <option value="HSC">HSC</option>
+                                                <option value="SSC">SSC</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Has Papers</label>
+                                            <select class="form-select" id="hasPapers" required>
+                                                <option value="true">Yes</option>
+                                                <option value="false">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Add Subject</button>
+                                </form>
+                            </div>
+                        </div>
+                        
+                        <!-- Subject List -->
+                        <div class="card mt-4">
+                            <div class="card-header">
+                                <h5 class="mb-0">Existing Subjects</h5>
+                            </div>
+                            <div class="card-body">
+                                <div id="subjectList">
+                                    <!-- Will be populated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics-compat.js"></script>
+    <!-- Firebase Config -->
+    <script src="firebase-config.js"></script>
+    <!-- Database Operations -->
+    <script src="db-operations.js"></script>
+    <!-- Utils -->
+    <script src="utils.js"></script>
+    <!-- Admin Dashboard -->
+    <script src="admin-dashboard.js"></script>
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+</body>
+</html> 

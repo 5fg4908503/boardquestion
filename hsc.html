@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="logo vector.svg">
+    <title>HSC Question Bank</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Board Question Bank</a>
+            <span class="navbar-text text-white">HSC / Alim</span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Filters Sidebar -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Filters</h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- Year Filter -->
+                        <div class="mb-3">
+                            <label class="form-label">Select Year</label>
+                            <select class="form-select" id="yearFilter">
+                                <option value="2024">2024</option>
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                            </select>
+                        </div>
+                        <!-- Board Filter -->
+                        <div class="mb-3">
+                            <label class="form-label">Select Board</label>
+                            <select class="form-select" id="boardFilter">
+                                <option value="dhaka">Dhaka</option>
+                                <option value="barisal">Barisal</option>
+                                <option value="chattogram">Chattogram</option>
+                                <option value="cumilla">Cumilla</option>
+                                <option value="dinajpur">Dinajpur</option>
+                                <option value="jashore">Jashore</option>
+                                <option value="mymensingh">Mymensingh</option>
+                                <option value="rajshahi">Rajshahi</option>
+                                <option value="sylhet">Sylhet</option>
+                                <option value="madrasah">Madrasah</option>
+                                <option value="technical">Technical</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subjects Grid -->
+            <div class="col-md-9">
+                <h2 class="mb-4">HSC Subjects</h2>
+                <div class="row">
+                    <!-- All Subjects -->
+                    <div class="col-12">
+                        <div class="row">
+                            <!-- Quran Majeed -->
+                            <div class="col-md-4 mb-3">
+                                <div class="card subject-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Quran Majeed</h5>
+                                        <a href="questions.html?subject=Quran Majeed" class="btn btn-primary btn-sm">View Questions</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Al Hadith -->
+                            <div class="col-md-4 mb-3">
+                                <div class="card subject-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Al Hadith</h5>
+                                        <a href="questions.html?subject=Al Hadith" class="btn btn-primary btn-sm">View Questions</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Al Fiqh -->
+                            <div class="col-md-4 mb-3">
+                                <div class="card subject-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Al Fiqh</h5>
+                                        <a href="questions.html?subject=Al Fiqh&paper=1st" class="btn btn-primary btn-sm me-1">1st Paper</a>
+                                        <a href="questions.html?subject=Al Fiqh&paper=2nd" class="btn btn-primary btn-sm">2nd Paper</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Arabic -->
+                            <div class="col-md-4 mb-3">
+                                <div class="card subject-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Arabic</h5>
+                                        <a href="questions.html?subject=Arabic&paper=1st" class="btn btn-primary btn-sm me-1">1st Paper</a>
+                                        <a href="questions.html?subject=Arabic&paper=2nd" class="btn btn-primary btn-sm">2nd Paper</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Arabic Literature (Science) -->
+                            <div class="col-md-4 mb-3">
+                                <div class="card subject-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Arabic Literature (Science)</h5>
+                                        <a href="questions.html?subject=Arabic Literature (Science)" class="btn btn-primary btn-sm">View Questions</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Bangla -->
+                            <div class="col-md-4 mb-3">
+                                <div class="card subject-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Bangla</h5>
+                                        <a href="questions.html?subject=Bangla&paper=1st" class="btn btn-primary btn-sm me-1">1st Paper</a>
+                                        <a href="questions.html?subject=Bangla&paper=2nd" class="btn btn-primary btn-sm">2nd Paper</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- English -->
+                            <div class="col-md-4 mb-3">
+                                <div class="card subject-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">English</h5>
+                                        <a href="questions.html?subject=English&paper=1st Paper" class="btn btn-primary btn-sm me-1">1st Paper</a>
+                                        <a href="questions.html?subject=English&paper=2nd Paper" class="btn btn-primary btn-sm">2nd Paper</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ICT -->
+                            <div class="col-md-4 mb-3">
+                                <div class="card subject-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">ICT</h5>
+                                        <a href="questions.html?subject=ICT" class="btn btn-primary btn-sm">View Questions</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Physics -->
+                            <div class="col-md-4 mb-3">
+                                <div class="card subject-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Physics</h5>
+                                        <a href="questions.html?subject=Physics&paper=1st" class="btn btn-primary btn-sm me-1">1st Paper</a>
+                                        <a href="questions.html?subject=Physics&paper=2nd" class="btn btn-primary btn-sm">2nd Paper</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Chemistry -->
+                            <div class="col-md-4 mb-3">
+                                <div class="card subject-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Chemistry</h5>
+                                        <a href="questions.html?subject=Chemistry&paper=1st" class="btn btn-primary btn-sm me-1">1st Paper</a>
+                                        <a href="questions.html?subject=Chemistry&paper=2nd" class="btn btn-primary btn-sm">2nd Paper</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Biology -->
+                            <div class="col-md-4 mb-3">
+                                <div class="card subject-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Biology</h5>
+                                        <a href="questions.html?subject=Biology&paper=1st" class="btn btn-primary btn-sm me-1">1st Paper</a>
+                                        <a href="questions.html?subject=Biology&paper=2nd" class="btn btn-primary btn-sm">2nd Paper</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Higher Math -->
+                            <div class="col-md-4 mb-3">
+                                <div class="card subject-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Higher Math</h5>
+                                        <a href="questions.html?subject=Higher Math&paper=1st" class="btn btn-primary btn-sm me-1">1st Paper</a>
+                                        <a href="questions.html?subject=Higher Math&paper=2nd" class="btn btn-primary btn-sm">2nd Paper</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Islamic History -->
+                            <div class="col-md-4 mb-3">
+                                <div class="card subject-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Islamic History</h5>
+                                        <a href="questions.html?subject=Islamic History" class="btn btn-primary btn-sm">View Questions</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Balagat O Mantik -->
+                            <div class="col-md-4 mb-3">
+                                <div class="card subject-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Balagat O Mantik</h5>
+                                        <a href="questions.html?subject=Balagat O Mantik" class="btn btn-primary btn-sm">View Questions</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Economics -->
+                            <div class="col-md-4 mb-3">
+                                <div class="card subject-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Economics</h5>
+                                        <a href="questions.html?subject=Economics&paper=1st" class="btn btn-primary btn-sm me-1">1st Paper</a>
+                                        <a href="questions.html?subject=Economics&paper=2nd" class="btn btn-primary btn-sm">2nd Paper</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Civics -->
+                            <div class="col-md-4 mb-3">
+                                <div class="card subject-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Civics</h5>
+                                        <a href="questions.html?subject=Civics&paper=1st" class="btn btn-primary btn-sm me-1">1st Paper</a>
+                                        <a href="questions.html?subject=Civics&paper=2nd" class="btn btn-primary btn-sm">2nd Paper</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

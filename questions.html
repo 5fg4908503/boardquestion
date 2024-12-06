@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="logo vector.svg">
+    <title>Question Display - Board Question Bank</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fancybox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .question-images img {
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        .question-images img:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Board Question Bank</a>
+            <div class="d-flex text-white">
+                <span class="me-3">HSC / Alim</span>
+                <span class="me-3">></span>
+                <span class="me-3" id="subjectName">Physics</span>
+                <span class="me-3">></span>
+                <span id="paperNumber">1st Paper</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Question Display -->
+            <div class="col-md-9">
+                <div class="card mb-4">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">2023 - Dhaka Board</h5>
+                        <a href="#" class="btn btn-primary btn-sm">Download PDF</a>
+                    </div>
+                    <div class="card-body">
+                        <!-- Question Preview -->
+                        <div class="question-images">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More Question Cards -->
+                <div class="card mb-4">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">2022 - Dhaka Board</h5>
+                        <a href="#" class="btn btn-primary btn-sm">Download PDF</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="question-images">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filters Sidebar -->
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Filters</h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- Year Filter -->
+                        <div class="mb-3">
+                            <label class="form-label">Year</label>
+                            <select class="form-select" id="filterYear">
+                                <option value="">All Years</option>
+                                <option value="2024">2024</option>
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                            </select>
+                        </div>
+                        <!-- Board Filter -->
+                        <div class="mb-3">
+                            <label class="form-label">Select Board</label>
+                            <select class="form-select" id="boardFilter">
+                                <option value="dhaka">Dhaka</option>
+                                <option value="barisal">Barisal</option>
+                                <option value="chattogram">Chattogram</option>
+                                <option value="cumilla">Cumilla</option>
+                                <option value="dinajpur">Dinajpur</option>
+                                <option value="jashore">Jashore</option>
+                                <option value="mymensingh">Mymensingh</option>
+                                <option value="rajshahi">Rajshahi</option>
+                                <option value="sylhet">Sylhet</option>
+                                <option value="madrasah">Madrasah</option>
+                                <option value="technical">Technical</option>
+                            </select>
+                        </div>
+                        <!-- Apply Filters Button -->
+                        <button class="btn btn-primary w-100">Apply Filters</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Fancybox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <!-- JSZip for downloading multiple images -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics-compat.js"></script>
+    <!-- Firebase Config -->
+    <script src="firebase-config.js"></script>
+    <!-- Utils -->
+    <script src="utils.js"></script>
+    <!-- Questions JS -->
+    <script src="questions.js"></script>
+</body>
+</html> 

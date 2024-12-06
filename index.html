@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="logo vector.svg">
+    <title>Board Question Bank</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Board Question Bank</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <h1 class="text-center mb-5">Welcome to Board Question Bank</h1>
+        
+        <!-- Class Selection Cards -->
+        <div class="row justify-content-center">
+            <!-- HSC Card -->
+            <div class="col-md-5 mb-4">
+                <div class="card class-card">
+                    <div class="card-body text-center">
+                        <h2 class="card-title">HSC / Alim</h2>
+                        <p class="card-text">Higher Secondary Certificate examination questions</p>
+                        <a href="hsc.html" class="btn btn-primary">View Questions</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SSC Card -->
+            <div class="col-md-5 mb-4">
+                <div class="card class-card">
+                    <div class="card-body text-center">
+                        <h2 class="card-title">SSC / Dakhil</h2>
+                        <p class="card-text">Secondary School Certificate examination questions</p>
+                        <a href="ssc.html" class="btn btn-primary">View Questions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-5 py-3 bg-light">
+        <div class="container text-center">
+            <div class="text-muted">
+                <p class="mb-1"><i class="bi bi-c-circle"></i> 2024 Board Question Bank. All rights reserved.</p>
+                <p class="mb-1"><i class="bi bi-code-slash"></i> Developed by: Hobby Studio</p>
+                <p class="mb-1"><i class="bi bi-person"></i> Developer: Abdur Rahman</p>
+                <img src="logo vector.svg" alt="Hobby Studio Logo" height="30" class="my-2">
+            </div>
+            <div class="mt-2">
+                <a href="#" onclick="checkAdminAccess(event)" class="text-muted small">
+                    <i class="bi bi-shield-lock"></i> Admin
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-storage-compat.js"></script>
+    <!-- Firebase Config -->
+    <script src="firebase-config.js"></script>
+    <script>
+    function checkAdminAccess(e) {
+        e.preventDefault();
+        // Check auth state
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                window.location.href = 'admin-dashboard.html';
+            } else {
+                window.location.href = 'admin-login.html';
+            }
+        });
+    }
+    </script>
+</body>
+</html> 
